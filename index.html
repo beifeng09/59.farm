@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+		#green {
+			width: 800px;
+			height: 470px;
+		}
+    </style>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function () {
+            $("#seed").click(function () {
+                $("#green").prop("src","img/7.jpg")
+            })
+            $("#grow").click(function () {
+                $("#green").prop("src","img/8.jpg")
+            })
+            $("#bloom").click(function () {
+                $("#green").prop("src","img/9.jpg")
+            })
+            $("#fruit").click(function () {
+                $("#green").prop("src","img/10.jpg")
+            })
+        })
+    </script>
+</head>
+<body>
+
+    <pre name="code" class="html"><div style="position: relative;">
+        <div style="position: absolute; left: 190px;top: 143px">
+        <img  src="./img/1.jpg"/>
+      </div>
+        <div style="position: absolute; left: 252px;top: 500px">
+        <img id="seed" src="./img/2.jpg"/>
+      </div>
+        <div style="position: absolute; left: 350px;top: 500px">
+        <img id="grow" src="./img/3.jpg"/>
+      </div>
+        <div style="position: absolute; left: 432px;top: 500px">
+        <img id="bloom" src="./img/4.jpg"/>
+      </div>
+        <div style="position: absolute; left: 530px;top:500px">
+        <img id="fruit" src="./img/5.jpg"/>
+      </div>
+       
+      <img id="green" src="img/11.jpg"/>
+    </div>
+    </pre>
+</body>
+</html>

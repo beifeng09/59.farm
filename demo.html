@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style type="text/css">
+td{ cursor:pointer;}
+ 
+</style>
+<script type="text/javascript" src="./js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript">
+function nowTime(){
+	var now=new Date();
+	var yy=now.getFullYear();
+	var MM=now.getMonth()+1;
+	var dd=now.getDate();
+	var w=now.getDay();
+	var arr=new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+	var ww=arr[w];
+	var hh=now.getHours();
+	var mm=now.getMinutes();
+	var ss=now.getSeconds();
+	$("#font1").html(yy+"-"+MM+"-"+dd+"<br>"+ww+" "+hh+":"+mm+":"+ss);
+//	document.getElementById("font1").innerHTML="现在时间是："+yy+"年"+MM+"月"+dd+"日"+ww+hh+"时"+mm+"分"+ss+"秒";
+	setTimeout(nowTime, 1000);
+}
+window.οnlοad=nowTime;
+ 
+$(document).ready(function(){	
+	$("body").css("background-image","url(img/8.jpg)");
+	$("body").css("backgroundPosition","left");
+	$("body").css("backgroundRepeat","no-repeat");
+	$("body").css("backgroundAttachment","fixed");
+	$("body").css("background-size","100%");
+	$("table[id='t1'] td").html("<img src='img/7.jpg' width='100%'>");
+	
+	//alert($("td:eq(0)").text());
+});
+function ov(obj){
+	obj.width=125;
+	obj.height=90;
+}
+function ou(obj){
+	obj.width=115;
+	obj.height=70;
+}
+ 
+var oo="";
+var arr=[["f1","0o"],["f2","0o"],["f3","0o"],
+         ["f4","0o"],["f5","0o"],["f6","0o"],
+         ["f7","0o"],["f8","0o"],["f9","0o"],
+         ["f10","0o"],["f11","0o"],["f12","0o"]];
+function oc(obj){	
+	if(oo!=""&&oo!=obj){
+		oo.style.border="";
+	}
+	obj.style.border=obj.style.border==""?"5px red solid":"";
+	if(obj.style.border!=""){
+		oo=obj;
+		//alert(oo.id);
+	}else{
+		oo="";
+	} 
+	
+}
+function oper(obj){
+	if(oo==""){
+		alert("请选择田地 ");
+	}else{
+		for(var i=0;i<arr.length;i++){			
+			if(arr[i][0]==oo.id){
+				if(parseInt(obj.id)-parseInt(arr[i][1])==1){
+					arr[i][1]=obj.id;
+					oo.innerHTML="<img src='"+obj.src+"' width='100%'>";
+				}else{
+					alert("再等等吧，还不能到这个阶段呢！");
+				}				
+				break;
+			}
+		}		
+	}
+	
+}
+</script>
+</head>
+<body>
+<div style="background-color: #1AFD9C;text-align: center;"><span><font style="font-size:30pt;text-align: center;">开心农场</font></span></div>
+<div style="float: left;background-color: yellow;width: 90px;w"><span><font style="color: green" id="font1" class="shuli">time：</font></span></div>
+<div align="center">
+<table width="500" height="500" border="10" bordercolor="green" id="t1" style="table-layout: fixed;">
+<tr height="25%">
+<td id="f1" οnclick="oc(this);"></td><td id="f2" οnclick="oc(this);"></td><td id="f3" οnclick="oc(this);"></td>
+</tr>
+<tr height="25%">
+<td id="f4" οnclick="oc(this);"></td><td id="f5" οnclick="oc(this);"></td><td id="f6" οnclick="oc(this);"></td>
+</tr>
+<tr height="25%">
+<td id="f7" οnclick="oc(this);"></td><td id="f8" οnclick="oc(this);"></td><td id="f9" οnclick="oc(this);"></td>
+</tr>
+<tr height="25%">
+<td id="f10" οnclick="oc(this);"></td><td id="f11" οnclick="oc(this);"></td><td id="f12" οnclick="oc(this);"></td>
+</tr>
+</table>
+</div>
+ 
+ 
+<div style="background-color: #1AFD9C;" align="center">
+<table cellspacing="10" align="center" style="table-layout: fixed;" name="t2">
+<tr>
+<td><img id="1o" name="menu" src='img/2.jpg' width="115" height="70" οnmοusemοve="ov(this);" οnmοuseοut="ou(this);" οnclick="oper(this);"></td>
+<td><img id="2o" name="menu" src='img/3.jpg' width="115" height="70" οnmοusemοve="ov(this);" οnmοuseοut="ou(this);" οnclick="oper(this);"></td>
+<td><img id="3o" name="menu" src='img/4.jpg' width="115" height="70" οnmοusemοve="ov(this);" οnmοuseοut="ou(this);" οnclick="oper(this);"></td>
+<td><img id="4o" name="menu" src='img/5.jpg' width="115" height="70" οnmοusemοve="ov(this);" οnmοuseοut="ou(this);" οnclick="oper(this);"></td>
+</tr>
+</table>
+</div>
+</body>
+
+</html>
